@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="2.5" type="plugin" group="vmpayment" method="upgrade">
+    <name>VMPAYMENT_ERIP</name>
+    <creationDate>Mai 15 2016</creationDate>
+    <author>bepaid</author>
+    <authorUrl>http://bepaid.by</authorUrl>
+    <copyright>Copyright (C) 2004-2016 Cherrysoft.by. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <version>1.0.1</version>
+    <description>Erip payment plugin</description>
+    <languages folder="languages">
+        <language tag="en-GB">en-GB/en-GB.plg_vmpayment_bepaid.sys.ini</language>
+        <language tag="ren-GB">en-GB/en-GB.plg_vmpayment_bepaid.ini</language>
+        
+        <language tag="ru-RU">ru-RU/ru-RU.plg_vmpayment_bepaid.sys.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.plg_vmpayment_bepaid.ini</language>
+    </languages>
+    <files>
+        <filename plugin="bepaid">bepaid.php</filename>
+        <folder>languages</folder>
+    </files>
+    <params addpath="plugins/vmpayment/bepaid" />
+
+	<config>
+    	<fields name="params">
+    		<fieldset name="options" addfieldpath="/administrator/components/com_virtuemart/models/fields">
+                <field type="vmjpluginwarning" name="vmjpluginwarning"/>
+
+                <field name="store_email_adress" type="text"  scope="com_virtuemart" label="VMPAYMENT_BEPAID_STORE_EMAIL_ADRESS" description="VMPAYMENT_BEPAID_STORE_EMAIL_ADRESS_DESC"/>
+
+        		<field name="erip_id_magazin" type="text"  scope="com_virtuemart" label="VMPAYMENT_BEPAID_ERIP_ID_MAGAZIN" description="VMPAYMENT_BEPAID_ERIP_ID_MAGAZIN_DESC"/>
+
+        		<field name="erip_API_key" type="text" label="VMPAYMENT_BEPAID_API_KEY" description="VMPAYMENT_BEPAID_API_KEY_DESC"/>
+
+                <field name="erip_API_domain" type="text" label="VMPAYMENT_BEPAID_ERIP_API_DOMAIN" description="VMPAYMENT_BEPAID_ERIP_API_DOMAIN_DESC" default="VMPAYMENT_BEPAID_ERIP_API_DOMAIN_DEFAULT"/>
+
+                <field name="erip_kod_uslugi" type="text" label="VMPAYMENT_BEPAID_ERIP_KOD_USLUGI" description="VMPAYMENT_BEPAID_ERIP_KOD_USLUGI_DESC"/>
+
+                <field name="erip_name_provider_uslugi" type="text" label="VMPAYMENT_BEPAID_ERIP_NAME_PROVIDER_USLUGI" description="VMPAYMENT_BEPAID_ERIP_NAME_PROVIDER_USLUGI_DESC"/>
+
+                <field name="info_message_in_check" type="text" label="VMPAYMENT_BEPAID_INFO_MESSAGE_IN_CHECK" description="VMPAYMENT_BEPAID_INFO_MESSAGE_IN_CHECK_DESC" default="VMPAYMENT_BEPAID_INFO_MESSAGE_IN_CHECK_DEFAULT"/>
+
+                <field name="name_sposoba_oplati" type="text" label="VMPAYMENT_BEPAID_NAME_SPOSOBA_OPLATI" description="VMPAYMENT_BEPAID_NAME_SPOSOBA_OPLATI_DESC" default="VMPAYMENT_BEPAID_NAME_SPOSOBA_OPLATI_DEFAULT"/>
+
+                <field name="description_sposoba_oplati" type="textarea" rows="10" label="VMPAYMENT_BEPAID_DESCRIPTION_SPOSOBA_OPLATI" description="VMPAYMENT_BEPAID_DESCRIPTION_SPOSOBA_OPLATI_DESC" default="VMPAYMENT_BEPAID_DESCRIPTION_SPOSOBA_OPLATI_DEFAULT"/>
+                
+                <field name="description_confiration_manual_mode" type="textarea" rows="10" label="VMPAYMENT_BEPAID_DESCRIPTION_CONFIRATION_MANUAL_MODE" description="VMPAYMENT_BEPAID_DESCRIPTION_CONFIRATION_MANUAL_MODE_DESC" default="VMPAYMENT_BEPAID_DESCRIPTION_CONFIRATION_MANUAL_MODE_DEFAULT"/>
+
+                <field name="description_confiration_auto_mode" type="textarea" rows="30" label="VMPAYMENT_BEPAID_DESCRIPTION_CONFIRATION_AUTO_MODE" description="VMPAYMENT_BEPAID_DESCRIPTION_CONFIRATION_AUTO_MODE_DESC" default="VMPAYMENT_BEPAID_DESCRIPTION_CONFIRATION_AUTO_MODE_DEFAULT"/>
+
+                <field name="description_erip_order_pay" type="textarea" rows="10" label="VMPAYMENT_BEPAID_DESCRIPTION_ERIP_ORDER_PAY" description="VMPAYMENT_BEPAID_DESCRIPTION_ERIP_ORDER_PAY_DESC" default="VMPAYMENT_BEPAID_DESCRIPTION_ERIP_ORDER_PAY_DEFAULT"/>
+
+                <field name="type_sposoba_oplati" type="radio" scope="com_virtuemart" default="1" label="VMPAYMENT_BEPAID_TYPE_SPOSOBA_OPLATI" description="VMPAYMENT_BEPAID_TYPE_SPOSOBA_OPLATI_DESC">
+                    <option value="0">MANUAL_TYPE_CREATE_INVOICE_TITLE</option>
+                    <option value="1">AUTO_TYPE_CREATE_INVOICE_TITLE</option>
+                </field>
+    		</fieldset>
+    	</fields>
+	</config>
+
+</extension>
